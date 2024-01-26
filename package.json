@@ -1,0 +1,37 @@
+{
+    "name": "1C-Launcher",
+    "preductname": "1°C Launcher",
+    "version": "1.0.0",
+    "description": "Launcher oficial para eventos de 1°C Game Studio",
+    "main": "src/app.js",
+    "author": "TheMativious",
+    "url": "https://themativious.000webhostapp.com/launcher",
+    "engines": {
+        "node": "^18.x.x"
+    },
+    "scripts": {
+        "start": "cross-env-shell NODE_ENV=dev electron .",
+        "build": "node build.js --obf=true",
+        "dev": "nodemon --exec npm start"
+    },
+    "license": "CC0",
+    "nodemonConfig": {
+        "ext": "js,html,css"
+    },
+    "dependencies": {
+        "electron-updater": "^5.0.1",
+        "minecraft-java-core": "^3.1.1",
+        "node-fetch": "^2.6.7"
+    },
+    "devDependencies": {
+        "cross-env": "^7.0.3",
+        "electron": "^24.1.1",
+        "electron-builder": "^24.2.1",
+        "javascript-obfuscator": "^4.0.2",
+        "nodemon": "^2.0.16"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/TheMativious/1CLauncher.git"
+    }
+}
