@@ -1,7 +1,7 @@
 {
     "name": "1C-Launcher",
     "preductname": "1°C Launcher",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Launcher oficial para eventos de 1°C Game Studio",
     "main": "src/app.js",
     "author": "TheMativious",
