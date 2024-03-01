@@ -90,7 +90,7 @@ class Launcher {
                     if (refresh.error) {
                         this.database.delete(account.uuid, 'accounts');
                         this.database.delete(account.uuid, 'profile');
-                        if (account.uuid === selectaccount) this.database.update({ uuid: "1234" }, 'accounts-selected')
+                        if (account.uuid === selectaccount) this.database.update({ uuid: "5678" }, 'accounts-selected')
                         console.error(`[Account] ${account.uuid}: ${refresh.errorMessage}`);
                         continue;
                     }
@@ -130,7 +130,7 @@ class Launcher {
                     let validate = await Mojang.validate(account);
                     if (!validate) {
                         this.database.delete(account.uuid, 'accounts');
-                        if (account.uuid === selectaccount) this.database.update({ uuid: "1234" }, 'accounts-selected')
+                        if (account.uuid === selectaccount) this.database.update({ uuid: "5678" }, 'accounts-selected')
                         console.error(`[Account] ${account.uuid}: Token is invalid.`);
                         continue;
                     }
@@ -141,7 +141,7 @@ class Launcher {
 
                     if (refresh.error) {
                         this.database.delete(account.uuid, 'accounts');
-                        if (account.uuid === selectaccount) this.database.update({ uuid: "1234" }, 'accounts-selected')
+                        if (account.uuid === selectaccount) this.database.update({ uuid: "5678" }, 'accounts-selected')
                         console.error(`[Account] ${account.uuid}: ${refresh.errorMessage}`);
                         continue;
                     }
@@ -163,7 +163,7 @@ class Launcher {
                     if (account.uuid === selectaccount) accountSelect(refresh.uuid)
                 } else {
                     this.database.delete(account.uuid, 'accounts');
-                    if (account.uuid === selectaccount) this.database.update({ uuid: "1234" }, 'accounts-selected')
+                    if (account.uuid === selectaccount) this.database.update({ uuid: "5678" }, 'accounts-selected')
                 }
             }
 
@@ -171,10 +171,10 @@ class Launcher {
 
 
             
-            if (!(await this.database.get('1234', 'accounts-selected')).value.selected) {
+            if (!(await this.database.get('5678', 'accounts-selected')).value.selected) {
                 let uuid = (await this.database.getAll('accounts'))[0]?.value?.uuid
                 if (uuid) {
-                    this.database.update({ uuid: "1234", selected: uuid }, 'accounts-selected')
+                    this.database.update({ uuid: "5678", selected: uuid }, 'accounts-selected')
                     accountSelect(uuid)
                 }
             }
